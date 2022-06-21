@@ -1,0 +1,50 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>dotnet-generic_gateway-D72AAFC5-5B8C-4EE3-AB16-41EAF4E38679</UserSecretsId>
+    <RootNamespace>generic_gateway</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
+    <PackageReference Include="YamlDotNet" Version="11.2.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\infrastructure\infrastructure.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Temp\AgentAvailiabiltyFilter.cs" />
+    <Compile Remove="Temp\AgentAvailabilityFilter.cs" />
+    <Compile Remove="Temp\Agent.cs" />
+    <Compile Remove="Temp\AgentPresenceUpdateDatetimeFilter.cs" />
+    <Compile Remove="Temp\AgentWorkloadFilter.cs" />
+    <Compile Remove="Temp\AgentStatus.cs" />
+    <Compile Remove="Temp\AgentSelectionPipeline.cs" />
+    <Compile Remove="Temp\Worker %28copy%29.cs" />
+    <Compile Remove="Temp\AgentStatusRepository.cs" />
+    <Compile Remove="Temp\IFilter.cs" />
+    <Compile Remove="Temp\Pipeline.cs" />
+    <Compile Remove="Temp\AgentAvailabilityFilter.cs" />
+    <Compile Remove="Temp\AgentAvailiabiltyFilter.cs" />
+    <Compile Remove="Temp\Worker %28copy%29.cs" />
+    <Compile Remove="Temp\Worker %28copy%29.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Temp\appsettings.json" />
+    <Content Remove="Temp\appsettings.Development.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="YamlDotNet" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="gateway.yaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="sender_gw %28copy%29.yaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>

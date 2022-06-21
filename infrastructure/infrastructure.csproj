@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Importers\" />
+    <None Remove="Exporters\" />
+    <None Remove="Processors\" />
+    <None Remove="Confluent.Kafka" />
+    <None Remove="Newtonsoft.Json" />
+    <None Remove="Core\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Importers\" />
+    <Folder Include="Exporters\" />
+    <Folder Include="Processors\" />
+    <Folder Include="Core\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Confluent.Kafka" Version="1.8.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aero.codegen.protocols\aero.codegen.protocols.csproj" />
+  </ItemGroup>
+</Project>

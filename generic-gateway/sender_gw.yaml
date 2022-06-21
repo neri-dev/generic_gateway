@@ -1,0 +1,24 @@
+﻿
+importer:
+  class : KafkaImporter
+  ip: localhost
+  nic: localhost
+  port: 9092
+  clientId: *
+  clientType: *
+  type_topic_map:
+    GcsLightsRep: telemetry_lights
+    GcsFastInsRpt: telemetry_fast_ins
+
+processors: [Telemetry2JsonProcessor]
+
+exporter:
+  class : KafkaExporter
+  ip: localhost
+  nic: localhost
+  port: 9092
+  clientId: demo
+  clientType: GCS
+  type_topic_map:
+    GcsLightsRep: telemetry_lights
+    GcsFastInsRpt: telemetry_fast_ins
